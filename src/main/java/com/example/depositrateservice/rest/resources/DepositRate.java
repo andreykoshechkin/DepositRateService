@@ -25,6 +25,10 @@ public class DepositRate {
     private String inputSource;
 
 
+    @NotBlank(message = "Отсутствует amount")
+    @JsonProperty(value = "amount", required = true)
+    private Double amount;
+
     @NotBlank(message = "Отсутствует параметр depositId")
     @JsonProperty(value = "contractTerms", required = true)
     @DecimalMin(value = "1", message = "Срок размещения депозита не может быть меньше 1 дня")
